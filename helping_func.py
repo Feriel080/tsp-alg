@@ -4,7 +4,6 @@ import numpy as np
 
 random.seed(42)
 
-
 def generate_villages(N):
     return [(random.randint(0, 100), random.randint(0, 100)) for _ in range(N)]
 
@@ -75,21 +74,3 @@ def realizable_solution(N, T):
         return False
 
     return True
-
-
-# testing the functions
-N = 5
-villages = generate_villages(N)
-print(villages)
-print("="*5)
-
-M = distance_matrix(N, villages)
-print(M)
-print("="*5)
-
-T = [4, 3, 0, 2, 2, 4]
-total_distance = longueur(N, T, M)
-print(total_distance)
-print("="*5)
-
-print(realizable_solution(N, T))
