@@ -4,6 +4,7 @@ import numpy as np
 
 random.seed(42)
 
+
 def generate_villages(N):
     return [(random.randint(0, 100), random.randint(0, 100)) for _ in range(N)]
 
@@ -16,12 +17,12 @@ def distance_matrix(N, villes):
     """Distance Matrix
 
     Args:
-        N (int): Number or vilalges
+        N (int): Number of vilalges
         villes (List[tuple]): Liste des coordonnées des ville 
             ex: [(3, 5), (2, 6), (10, 60)...]
 
     Returns:
-        M: Matrix 
+        M: Distances matrix 
     """
     M = np.zeros((N, N))
 
@@ -38,7 +39,7 @@ def longueur(N, T, M):
     Args:
         T (list[int]): contains the route indices
             ex: [5, 2, 3...]
-        M (numpy.ndarray): N-by-N distance matrix, where M[i, j] is the
+        M (numpy.ndarray): the distance matrix, where M[i, j] is the
             distance between villages i and j.
 
     Returns:
@@ -66,7 +67,6 @@ def realizable_solution(N, T):
 
     # Check if the first visited village is the last village
     if T[0] != T[N]:
-        print("why2")
         return False
 
     # Check if the solution contains all villages, and all are unique
