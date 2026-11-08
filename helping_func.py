@@ -2,9 +2,6 @@ import random
 import math
 import numpy as np
 
-random.seed(42)
-
-
 def generate_villages(N):
     return [(random.randint(0, 100), random.randint(0, 100)) for _ in range(N)]
 
